@@ -17,17 +17,16 @@ def bulk_send():
     try:
         with open("emails.csv", 'r') as emails:
             for email in emails:
-                # email = email.strip()
-                email = "yrarjun59@gmail.com"
+                email = email.strip()
                 if not is_valid_email(email):
                     print(f"Skipping invalid email: {email}")
                     continue
                 
-                # print(f"the email is {email}" )
+                print(f"the email is {email}" )
                 print(f"(Simulation) Email ready to be sent to {email}.")
                 send_email(email)
+                print(f"Email successfully sent to {email}.")
 
-                break
     except FileNotFoundError:
         print("Emails file not found. Ensure 'emails.csv' is in the correct location.")
 
